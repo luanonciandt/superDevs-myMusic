@@ -12,7 +12,6 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Collections;
-import java.util.stream.Collectors;
 
 @Component
 public class CustomAuthenticationProvider implements AuthenticationProvider {
@@ -39,9 +38,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(status);
         if (status == 201) {
-            System.out.println("mamao!!!");
             return new PreAuthenticatedAuthenticationToken("AuthenticatedUser", name, Collections.singleton(new SimpleGrantedAuthority("USER")));
         } else {
             return null;

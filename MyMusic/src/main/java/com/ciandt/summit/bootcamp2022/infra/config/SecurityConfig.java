@@ -3,6 +3,7 @@ package com.ciandt.summit.bootcamp2022.infra.config;
 import com.ciandt.summit.bootcamp2022.infra.config.tokenAuth.AuthTokenFilter;
 import com.ciandt.summit.bootcamp2022.infra.config.tokenAuth.CustomAuthenticationProvider;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -18,6 +19,7 @@ import javax.servlet.Filter;
 
 @Configuration
 @EnableWebSecurity
+@Profile(value = {"development", "production"})
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final CustomAuthenticationProvider tokenAuth;
