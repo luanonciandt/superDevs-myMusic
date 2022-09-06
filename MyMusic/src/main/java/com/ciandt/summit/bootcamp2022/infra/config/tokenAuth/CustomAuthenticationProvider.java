@@ -38,9 +38,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(status);
         if (status == 201) {
-            System.out.println("mamao!!!");
             return new PreAuthenticatedAuthenticationToken("AuthenticatedUser", name, Collections.singleton(new SimpleGrantedAuthority("USER")));
         } else {
             return null;
