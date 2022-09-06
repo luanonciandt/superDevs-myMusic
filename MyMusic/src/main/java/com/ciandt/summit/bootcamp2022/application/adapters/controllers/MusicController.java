@@ -5,13 +5,10 @@ import com.ciandt.summit.bootcamp2022.application.dtos.MusicDataDTO;
 import com.ciandt.summit.bootcamp2022.domain.dtos.MusicDTO;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.MusicServicePort;
 import com.ciandt.summit.bootcamp2022.exceptions.InvalidParameterException;
-import com.ciandt.summit.bootcamp2022.exceptions.NoContentException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 
