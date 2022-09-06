@@ -1,5 +1,7 @@
 package com.ciandt.summit.bootcamp2022.infra.adapters.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,16 +13,19 @@ public class UserEntity {
     private String id;
     @Column(name="Nome")
     private String name;
-    @OneToOne(mappedBy = "musics")
-    private String playListId;
+
+    @JsonIgnore
+    @OneToOne
+    @JoinColumn(name = "PlaylistId", referencedColumnName = "Id")
+    private PlaylistEntity playlist;
 
     public UserEntity() {
     }
 
-    public UserEntity(String id, String name, String playListId) {
+    public UserEntity(String id, String name, PlaylistEntity playlist) {
         this.id = id;
         this.name = name;
-        this.playListId = playListId;
+        this.playlist = playlist;
     }
 
     public String getId() {
@@ -39,11 +44,11 @@ public class UserEntity {
         this.name = name;
     }
 
-    public String getPlayListId() {
-        return playListId;
+    public PlaylistEntity getPlaylist() {
+        return playlist;
     }
 
-    public void setPlayListId(String playListId) {
-        this.playListId = playListId;
+    public void setPlaylist(PlaylistEntity playlist) {
+        this.playlist = playlist;
     }
 }
