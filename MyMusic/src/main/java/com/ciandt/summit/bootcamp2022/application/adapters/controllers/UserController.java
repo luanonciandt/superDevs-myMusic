@@ -1,6 +1,8 @@
 package com.ciandt.summit.bootcamp2022.application.adapters.controllers;
 
+import com.ciandt.summit.bootcamp2022.domain.dtos.UserDTO;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.UserServicePort;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +19,7 @@ public class UserController {
     }
 
     @GetMapping("/{userId}")
-    public void verifyUser(@PathVariable String userId){
-
+    public ResponseEntity<UserDTO> getUserById(@PathVariable String userId){
+        return ResponseEntity.ok(userServicePort.getUserById(userId));
     }
 }
