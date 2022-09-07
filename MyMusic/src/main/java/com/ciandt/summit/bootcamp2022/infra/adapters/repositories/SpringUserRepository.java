@@ -1,4 +1,10 @@
 package com.ciandt.summit.bootcamp2022.infra.adapters.repositories;
 
-public interface SpringUserRepository {
+import com.ciandt.summit.bootcamp2022.infra.adapters.entities.UserEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface SpringUserRepository extends JpaRepository<UserEntity, String> {
+    UserEntity getUserById(String id);
 }
