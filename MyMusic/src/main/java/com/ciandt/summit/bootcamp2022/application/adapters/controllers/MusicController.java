@@ -22,11 +22,6 @@ public class MusicController {
         this.musicServicePort = musicServicePort;
     }
 
-    @GetMapping(value = "/all")
-    public ResponseEntity<Set<MusicDTO>> getMusic() {
-        return ResponseEntity.ok(musicServicePort.searchMusics());
-    }
-
     @GetMapping
     public ResponseEntity<MusicDataDTO> findMusicByName(@RequestParam("name") String name) {
         if(name == null || name.length() < 2)
@@ -37,9 +32,4 @@ public class MusicController {
             return ResponseEntity.ok(new MusicDataDTO(musicServicePort.getMusicsByFilter(name)));
     }
 
-    @PostMapping(value = "/playlists")
-    @ResponseStatus(HttpStatus.CREATED)
-    public void addMusics(@RequestBody MusicDTO musicDTO) {
-        musicServicePort.addMusic(musicDTO);
-    }
 }
