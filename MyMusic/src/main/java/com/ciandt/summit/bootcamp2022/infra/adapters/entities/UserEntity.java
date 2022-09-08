@@ -21,8 +21,8 @@ public class UserEntity {
     private PlaylistEntity playlist;
 
     @ManyToOne
-    @JoinColumn(name="UserTypeID", referencedColumnName = "Id")
-    private UserTypeEntity userTypeEntity;
+    @JoinColumn(name="UserTypeID")
+    private UserTypeEntity userType;
 
     public UserEntity() {
     }
@@ -55,6 +55,14 @@ public class UserEntity {
 
     public void setPlaylist(PlaylistEntity playlist) {
         this.playlist = playlist;
+    }
+
+    public UserTypeEntity getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserTypeEntity userType) {
+        this.userType = userType;
     }
 
     public User toUser() {

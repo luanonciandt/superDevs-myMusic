@@ -1,8 +1,12 @@
 package com.ciandt.summit.bootcamp2022.infra.adapters.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "TipoUsuario")
@@ -13,16 +17,20 @@ public class UserTypeEntity {
     private String id;
 
     @Column(name="Descricao")
-    @OneToMany(mappedBy = "userTypeEntity")
-    private List<UserEntity> type;
+    private String type;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "userType")
+    private Set<UserEntity> users = new HashSet<>();
 
     public UserTypeEntity() {
 
     }
 
-    public UserTypeEntity(String id, List<UserEntity> type) {
+    public UserTypeEntity(String id, String type, Set<UserEntity> users) {
         this.id = id;
         this.type = type;
+        this.users = users;
     }
 
     public String getId() {
@@ -33,12 +41,20 @@ public class UserTypeEntity {
         this.id = id;
     }
 
-    public List<UserEntity> getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(List<UserEntity> type) {
+    public void setType(String type) {
         this.type = type;
+    }
+
+    public Set<UserEntity> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<UserEntity> users) {
+        this.users = users;
     }
 }
 
