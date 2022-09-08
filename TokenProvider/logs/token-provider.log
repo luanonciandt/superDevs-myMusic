@@ -1,0 +1,23 @@
+2022-08-30 14:41:28,305 INFO org.springframework.boot.StartupInfoLogger [main] Starting TokenProviderApplication using Java 11.0.16 on lnb028549spo with PID 109530 (/home/gabrielliv/Documents/techchamps/superDevs-myMusic/TokenProvider/target/classes started by CIANDT\gabrielliv in /home/gabrielliv/Documents/techchamps/superDevs-myMusic/TokenProvider)
+2022-08-30 14:41:28,308 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-08-30 14:41:29,593 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-08-30 14:41:29,604 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-08-30 14:41:29,605 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-08-30 14:41:29,605 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-08-30 14:41:29,679 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-08-30 14:41:29,684 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1313 ms
+2022-08-30 14:41:30,305 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-08-30 14:41:30,324 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-08-30 14:41:30,335 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 14:41:30,350 INFO org.springframework.boot.StartupInfoLogger [main] Started TokenProviderApplication in 2.991 seconds (JVM running for 4.606)
+2022-08-30 14:41:55,641 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-30 14:41:55,642 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-08-30 14:41:55,643 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2022-08-30 14:41:55,769 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-1] Recebido requisição para criação de token para chave: CIANDT\gabrielliv
+2022-08-30 14:41:55,836 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-1] Token gerado com sucesso
+2022-08-30 15:05:02,079 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-3] Recebido requisição para criação de token para chave: CIANDT\gabrielliv
+2022-08-30 15:05:02,081 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-3] Token gerado com sucesso
+2022-08-30 15:12:41,669 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-5] Recebido requisição para criação de token para chave: CIANDT\gabrielliv
+2022-08-30 15:12:41,671 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-5] Token gerado com sucesso
+2022-08-30 15:21:07,108 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-7] Recebido requisição para criação de token para chave: CIANDT\gabrielliv
+2022-08-30 15:21:07,111 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-7] Token gerado com sucesso
