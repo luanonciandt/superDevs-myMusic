@@ -4,6 +4,8 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import com.ciandt.summit.bootcamp2022.domain.ports.repositories.UserRepositoryPort;
+import com.ciandt.summit.bootcamp2022.infra.adapters.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
