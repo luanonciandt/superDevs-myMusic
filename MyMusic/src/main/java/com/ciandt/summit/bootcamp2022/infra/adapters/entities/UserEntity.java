@@ -20,7 +20,7 @@ public class UserEntity {
     @JoinColumn(name = "PlaylistId", referencedColumnName = "Id")
     private PlaylistEntity playlist;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="UserTypeID", referencedColumnName = "Id")
     private UserTypeEntity userTypeEntity;
 
