@@ -15,6 +15,9 @@ public class Playlist {
     public Playlist(PlaylistDTO playlistDTO) {
         this.id = playlistDTO.getId();
     }
+    public Playlist(String id){
+        this.id = id;
+    }
 
     public String getId() {
         return id;

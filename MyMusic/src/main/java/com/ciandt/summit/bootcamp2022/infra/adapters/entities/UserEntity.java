@@ -1,5 +1,6 @@
 package com.ciandt.summit.bootcamp2022.infra.adapters.entities;
 
+import com.ciandt.summit.bootcamp2022.domain.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -50,5 +51,9 @@ public class UserEntity {
 
     public void setPlaylist(PlaylistEntity playlist) {
         this.playlist = playlist;
+    }
+
+    public User toUser() {
+        return new User(this.id, this.name, this.playlist.toPlaylist());
     }
 }

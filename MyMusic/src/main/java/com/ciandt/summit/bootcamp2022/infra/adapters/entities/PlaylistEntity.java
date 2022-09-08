@@ -44,4 +44,8 @@ public class PlaylistEntity {
     public void setMusics(List<MusicEntity> musics) {
         this.musics = musics;
     }
+
+    public Playlist toPlaylist(){
+        return new Playlist(this.id);
+    }
 }

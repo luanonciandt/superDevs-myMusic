@@ -1,19 +1,21 @@
 package com.ciandt.summit.bootcamp2022.domain.dtos;
 
+import com.ciandt.summit.bootcamp2022.domain.Playlist;
+
 public class UserDTO {
     private static final long serialVersionUID = 1L;
     private String id;
     private String name;
-    private String playListId;
+    private PlaylistDTO playlist;
 
     public UserDTO() {
 
     }
 
-    public UserDTO(String id, String name, String playListId) {
+    public UserDTO(String id, String name, PlaylistDTO playlist) {
         this.id = id;
         this.name = name;
-        this.playListId = playListId;
+        this.playlist = playlist;
     }
 
     public String getId() {
@@ -32,11 +34,11 @@ public class UserDTO {
         this.name = name;
     }
 
-    public String getPlayListId() {
-        return playListId;
+    public PlaylistDTO getPlayListId() {
+        return playlist;
     }
 
-    public void setPlayListId(String playListId) {
-        this.playListId = playListId;
+    public void setPlayListId(PlaylistDTO playlist) {
+        this.playlist = playlist;
     }
 }
