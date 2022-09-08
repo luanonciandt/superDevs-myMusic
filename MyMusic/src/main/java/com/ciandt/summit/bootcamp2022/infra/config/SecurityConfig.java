@@ -19,7 +19,7 @@ import javax.servlet.Filter;
 
 @Configuration
 @EnableWebSecurity
-@Profile(value = {"development", "production"})
+@Profile(value = {"dev", "prod"})
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final CustomAuthenticationProvider tokenAuth;
