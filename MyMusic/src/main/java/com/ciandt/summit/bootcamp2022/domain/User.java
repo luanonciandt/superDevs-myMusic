@@ -19,7 +19,7 @@ public class User {
         this.id = userDTO.getId();
         this.name = userDTO.getName();
         this.playlist = new Playlist(this.id);
-        this.userType = new UserType(this.userType.getId(), this.userType.getType());
+        this.userType = new UserType(userDTO.getUserType().getId(), userDTO.getUserType().getType());
     }
     public User() {
     }

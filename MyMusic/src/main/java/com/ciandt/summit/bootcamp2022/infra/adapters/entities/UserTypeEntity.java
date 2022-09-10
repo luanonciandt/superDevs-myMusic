@@ -31,7 +31,7 @@ public class UserTypeEntity {
         this.type = type;
     }
     public UserType toUserType(){
-        return new UserType();
+        return new UserType(this.id, this.type);
     }
 
     public String getId() {
