@@ -1,11 +1,10 @@
 package com.ciandt.summit.bootcamp2022.infra.adapters.entities;
 
+import com.ciandt.summit.bootcamp2022.domain.UserType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -27,10 +26,12 @@ public class UserTypeEntity {
 
     }
 
-    public UserTypeEntity(String id, String type, Set<UserEntity> users) {
+    public UserTypeEntity(String id, String type) {
         this.id = id;
         this.type = type;
-        this.users = users;
+    }
+    public UserType toUserType(){
+        return new UserType();
     }
 
     public String getId() {
