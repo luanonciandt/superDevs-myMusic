@@ -13,14 +13,16 @@ import java.util.stream.Collectors;
 public class PlaylistRepository implements PlaylistRepositoryPort {
 
     private final SpringPlaylistRepository springPlaylistRepository;
+    private final SpringMusicRepository springMusicRepository;
 
-    public PlaylistRepository(SpringPlaylistRepository springPlaylistRepository) {
+    public PlaylistRepository(SpringPlaylistRepository springPlaylistRepository, SpringMusicRepository springMusicRepository) {
         this.springPlaylistRepository = springPlaylistRepository;
+        this.springMusicRepository = springMusicRepository;
     }
 
     @Override
     public void addMusicToPlaylist(String playlistId, Music music)  {
-        if(!springPlaylistRepository.existsById(playlistId) || !springPlaylistRepository.existsById(music.getId()))
+        if(!springPlaylistRepository.existsById(playlistId) || !springMusicRepository.existsById(music.getId()))
             throw new InvalidParameterException("Playlist ou música inexistentes.");
         PlaylistEntity playlistEntity = this.springPlaylistRepository.getById(playlistId);
         playlistEntity.getMusics().add(new MusicEntity(music));
@@ -29,7 +31,7 @@ public class PlaylistRepository implements PlaylistRepositoryPort {
 
     @Override
     public void removeMusicFromPlaylist(String playlistId, String musicId) {
-        if(!springPlaylistRepository.existsById(playlistId) || !springPlaylistRepository.existsById(musicId))
+        if(!springPlaylistRepository.existsById(playlistId) || !springMusicRepository.existsById(musicId))
             throw new InvalidParameterException("Playlist ou música inexistentes.");
         PlaylistEntity playlistEntity = this.springPlaylistRepository.getById(playlistId);
         playlistEntity.setMusics(playlistEntity.getMusics().stream().filter(musicEntity -> !musicEntity.getId().equals(musicId)).collect(Collectors.toList()));
