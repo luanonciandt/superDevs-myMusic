@@ -21,16 +21,17 @@ public class UserEntity {
     private PlaylistEntity playlist;
 
     @ManyToOne
-    @JoinColumn(name="UserTypeID")
+    @JoinColumn(name="IdTipoUsuario", referencedColumnName = "Id")
     private UserTypeEntity userType;
 
     public UserEntity() {
     }
 
-    public UserEntity(String id, String name, PlaylistEntity playlist) {
+    public UserEntity(String id, String name, PlaylistEntity playlist, UserTypeEntity userType) {
         this.id = id;
         this.name = name;
         this.playlist = playlist;
+        this.userType = userType;
     }
 
     public String getId() {
@@ -66,6 +67,6 @@ public class UserEntity {
     }
 
     public User toUser() {
-        return new User(this.id, this.name, this.playlist.toPlaylist());
+        return new User(this.id, this.name, this.playlist.toPlaylist(), this.userType.toUserType());
     }
 }

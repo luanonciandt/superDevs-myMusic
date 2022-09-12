@@ -2,20 +2,23 @@ package com.ciandt.summit.bootcamp2022.domain.dtos;
 
 import com.ciandt.summit.bootcamp2022.domain.Playlist;
 
-public class UserDTO {
+import java.io.Serializable;
+
+public class UserDTO implements Serializable {
     private static final long serialVersionUID = 1L;
     private String id;
     private String name;
     private PlaylistDTO playlist;
-
+    private UserTypeDTO userType;
     public UserDTO() {
 
     }
 
-    public UserDTO(String id, String name, PlaylistDTO playlist) {
+    public UserDTO(String id, String name, PlaylistDTO playlist, UserTypeDTO userType) {
         this.id = id;
         this.name = name;
         this.playlist = playlist;
+        this.userType = userType;
     }
 
     public String getId() {
@@ -40,5 +43,13 @@ public class UserDTO {
 
     public void setPlayListId(PlaylistDTO playlist) {
         this.playlist = playlist;
+    }
+
+    public UserTypeDTO getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserTypeDTO userType) {
+        this.userType = userType;
     }
 }
