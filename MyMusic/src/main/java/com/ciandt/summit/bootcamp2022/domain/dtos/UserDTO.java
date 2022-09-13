@@ -1,7 +1,5 @@
 package com.ciandt.summit.bootcamp2022.domain.dtos;
 
-import com.ciandt.summit.bootcamp2022.domain.Playlist;
-
 import java.io.Serializable;
 
 public class UserDTO implements Serializable {

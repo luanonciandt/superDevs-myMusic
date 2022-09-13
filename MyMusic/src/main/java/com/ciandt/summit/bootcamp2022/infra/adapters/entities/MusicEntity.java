@@ -63,5 +63,14 @@ public class MusicEntity {
         return artist;
     }
 
+    @Override
+    public String toString() {
+        return "MusicEntity{" +
+                "id='" + id + '\'' +
+                ", nome='" + nome + '\'' +
+                ", playlists=" + playlists +
+                ", artist=" + artist +
+                '}';
+    }
 }
 

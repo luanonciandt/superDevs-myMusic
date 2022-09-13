@@ -1,6 +1,7 @@
 package com.ciandt.summit.bootcamp2022.application.adapters.controllers;
 
 import com.ciandt.summit.bootcamp2022.application.dtos.MusicDataDTO;
+import com.ciandt.summit.bootcamp2022.domain.dtos.UserDTO;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.PlaylistServicePort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +17,9 @@ public class PlaylistController {
         this.playlistServicePort = playlistServicePort;
     }
 
-    @PutMapping("/{playlistId}/musicas")
-    public ResponseEntity<MusicDataDTO> addMusicToPlaylist(@PathVariable String playlistId, @RequestBody MusicDataDTO data) {
-        this.playlistServicePort.addMusicToPlaylist(playlistId, data.getData().get(0));
+    @PutMapping("/{playlistId}/{user}/musicas")
+    public ResponseEntity<MusicDataDTO> addMusicToPlaylist(@PathVariable String playlistId, @RequestBody MusicDataDTO data, @PathVariable String user) {
+        this.playlistServicePort.addMusicToPlaylist(playlistId, data.getData().get(0), user);
         return ResponseEntity.status(HttpStatus.CREATED).body(data);
     }
 
