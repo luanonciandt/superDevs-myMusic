@@ -48,4 +48,12 @@ public class PlaylistEntity {
     public Playlist toPlaylist(){
         return new Playlist(this.id);
     }
+
+    @Override
+    public String toString() {
+        return "PlaylistEntity{" +
+                "id='" + id + '\'' +
+                ", musics=" + musics +
+                '}';
+    }
 }
