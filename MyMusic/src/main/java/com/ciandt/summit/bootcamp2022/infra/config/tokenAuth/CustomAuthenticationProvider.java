@@ -21,7 +21,9 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        return processToken(authentication.getCredentials().toString(), authentication.getPrincipal().toString());
+        String name = (String) authentication.getCredentials();
+        String token = (String) authentication.getPrincipal();
+        return processToken(name, token);
     }
 
     public Authentication processToken(String name, String token) {

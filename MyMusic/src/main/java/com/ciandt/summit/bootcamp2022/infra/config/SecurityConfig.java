@@ -51,7 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     private RequestMatcher getRequestMatcher() {
-        return new OrRequestMatcher(new AntPathRequestMatcher("/**"));
+        return new OrRequestMatcher(new AntPathRequestMatcher("/api/*"));
     }
 
     private Filter buildTokenFilter() throws Exception {
